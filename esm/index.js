@@ -1,9 +1,9 @@
 /*! (c) Andrea Giammarchi - ISC */
 try { new WeakSet; }
 catch (o_O) {
-  (function (C, dP) {
+  (function (id, dP) {
     WeakSet = function () {'use strict';
-      dP(this, '_', {value: ['__', Math.random(), C++, '__'].join('ws')});
+      dP(this, '_', {value: '_@ungap/weakmap' + id++});
     };
     var proto = WeakSet.prototype;
     proto.add = function (object) {
@@ -17,6 +17,6 @@ catch (o_O) {
     proto.delete = function (object) {
       return this.has(object) && delete object[this._];
     };
-  }(0, Object.defineProperty));
+  }(Math.random(), Object.defineProperty));
 }
 export default WeakSet;
