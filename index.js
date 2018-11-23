@@ -1,10 +1,8 @@
 /*! (c) Andrea Giammarchi - ISC */
-try { new WeakSet; }
-catch (o_O) {
+var self = this || /* istanbul ignore next */ {};
+try { self.WeakSet = WeakSet; }
+catch (WeakSet) {
   (function (id, dP) {
-    WeakSet = function () {'use strict';
-      dP(this, '_', {value: '_@ungap/weakmap' + id++});
-    };
     var proto = WeakSet.prototype;
     proto.add = function (object) {
       if (!this.has(object))
@@ -17,5 +15,9 @@ catch (o_O) {
     proto.delete = function (object) {
       return this.has(object) && delete object[this._];
     };
+    self.WeakSet = WeakSet;
+    function WeakSet() {'use strict';
+      dP(this, '_', {value: '_@ungap/weakmap' + id++});
+    }
   }(Math.random(), Object.defineProperty));
 }
