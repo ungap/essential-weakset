@@ -1,6 +1,6 @@
 {
   "name": "@ungap/essential-weakset",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Essential WeakSet for legacy browsers.",
   "main": "./cjs/index.js",
   "module": "./esm/index.js",
