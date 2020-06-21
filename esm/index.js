@@ -1,5 +1,5 @@
 /*! (c) Andrea Giammarchi - ISC */
-var self = this || /* istanbul ignore next */ {};
+var self = {};
 try { self.WeakSet = WeakSet; }
 catch (WeakSet) {
   (function (id, dP) {
